@@ -1,0 +1,154 @@
+.snowflake {
+  position: fixed;
+  top: var(--top, 0);
+  left: var(--left, 0);
+
+  color: var(--color, cornflowerblue);
+  font-size: var(--size, 1rem);
+  font-weight: lighter;
+
+  filter: blur(0.5px);
+
+  animation: var(--animation-name, fall-1) 2s forwards;
+  pointer-events: none;
+}
+
+@mixin createFallAnimation(
+  $i,
+  $percent,
+  $x1,
+  $x2,
+  $x3,
+  $y1,
+  $y2,
+  $y3,
+  $rotateX1,
+  $rotateX2,
+  $rotateX3,
+  $rotateY1,
+  $rotateY2,
+  $rotateY3,
+  $rotateZ1,
+  $rotateZ2,
+  $rotateZ3
+) {
+  @keyframes fall-#{$i} {
+    0% {
+      transform: translate($x1, $y1) rotateX($rotateX1) rotateY($rotateY1)
+        rotateZ($rotateZ1);
+      opacity: 0;
+    }
+
+    #{$percent} {
+      transform: translate($x2, $y2) rotateX($rotateX2) rotateY($rotateY2)
+        rotateZ($rotateZ2);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translate($x3, $y3) rotateX($rotateX3) rotateY($rotateY3)
+        rotateZ($rotateZ3);
+      opacity: 0;
+    }
+  }
+}
+
+@include createFallAnimation(
+  1,
+  5%,
+  0px,
+  10px,
+  25px,
+  0px,
+  -10px,
+  200px,
+  45deg,
+  45deg,
+  180deg,
+  30deg,
+  30deg,
+  270deg,
+  0deg,
+  0deg,
+  90deg
+);
+
+@include createFallAnimation(
+  2,
+  10%,
+  0px,
+  -10px,
+  -10px,
+  0px,
+  -5px,
+  160px,
+  -20deg,
+  -20deg,
+  -90deg,
+  10deg,
+  10deg,
+  45deg,
+  0deg,
+  0deg,
+  0deg
+);
+
+@include createFallAnimation(
+  3,
+  15%,
+  0px,
+  7px,
+  20px,
+  0px,
+  5px,
+  120px,
+  0deg,
+  0deg,
+  -180deg,
+  45deg,
+  45deg,
+  -90deg,
+  0deg,
+  0deg,
+  0deg
+);
+
+@include createFallAnimation(
+  4,
+  5%,
+  0px,
+  -10px,
+  -25px,
+  0px,
+  10px,
+  200px,
+  -45deg,
+  -45deg,
+  -180deg,
+  -30deg,
+  -30deg,
+  -270deg,
+  0deg,
+  0deg,
+  -90deg
+);
+
+@include createFallAnimation(
+  5,
+  10%,
+  0px,
+  10px,
+  10px,
+  0px,
+  -5px,
+  160px,
+  20deg,
+  20deg,
+  90deg,
+  -10deg,
+  -10deg,
+  -45deg,
+  0deg,
+  -90deg,
+  0deg
+);
