@@ -7,9 +7,11 @@
   font-size: var(--size, 1rem);
   font-weight: lighter;
 
-  filter: blur(0.5px);
+  filter: blur(0.1px);
 
-  animation: var(--animation-name, fall-1) 2s forwards;
+  animation-name: var(--animation-name, fall-1);
+  animation-duration: var(--animation-duration, 1000);
+  animation-fill-mode: forwards;
   pointer-events: none;
 }
 
