@@ -1,7 +1,9 @@
 import "./styles/snowfall.scss";
 
 export class Snowfall {
-  constructor() {}
+  constructor() {
+    this._SNOWFALL_COUNT = Math.min(window.innerWidth / 6, 200);
+  }
 
   _SNOWFALL_COUNT = 200;
 
